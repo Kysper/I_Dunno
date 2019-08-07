@@ -1,0 +1,86 @@
+/* Sign up */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #6f4fd8;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form-wrap {
+  background-color: #fff;
+  padding: 15px 25px;
+  color: #333;
+  border-radius: 5px;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap .form-group {
+  margin-top: 15px;
+}
+
+.form-wrap .form-group label {
+  display: block;
+  color: #666;
+}
+
+.form-wrap .form-group input {
+  padding: 10px;
+  width: 100%;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+
+.form-wrap button {
+  margin: 0 auto;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  color: #fff;
+  cursor: pointer;
+  background-color: #2aa5ad;
+  
+}
+
+.form-wrap button:hover {
+  color: #38a08e;
+}
+
+.form-wrap .bottom-text {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer a {
+  color: #2aa5ad;
+}
