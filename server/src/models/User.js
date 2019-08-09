@@ -6,13 +6,11 @@ const jwt = require("jsonwebtoken");
 const userSchema = mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
-    trim: true
+    required: true
   },
   lastName: {
     type: String,
-    required: true,
-    trim: true
+    required: true
   },
   email: {
     type: String,
@@ -37,7 +35,7 @@ const userSchema = mongoose.Schema({
         required: true
       }
     }
-  ],
+  ]
 });
 
 userSchema.pre("save", async function(next) {

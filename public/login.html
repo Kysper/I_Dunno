@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>I Dunno</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav-bar">
+        <img />
+      <span>
+        <a action="/" method='GET'>Home</a>
+        <a action="/sign-up" method='GET'>Sign-Up</a>
+        <a action="/login" method='GET' disabled>Login</a>
+        <a action="/logout" method='POST' hidden>Logout</a>
+      </span>
+      </nav>
+      <div id="container">
+            <div class="form-wrap">
+              <h1>Login</h1>
+              
+              <form action='/login' method="POST">
+             <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password" required/>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="bottom-text">
+                </p>
+              </form>
+              </div>
+    </body>
+    </html>

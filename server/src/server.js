@@ -14,7 +14,7 @@ app.use(express.static('images'));
 app.use(express.static('js'));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(userRouter)
 app.use(homeRouter)

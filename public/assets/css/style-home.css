@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+}
+.nav-bar {
+    display:inline-block;
+    width:100%;
+border-bottom:3px solid purple;
+height: 80px;
+}
+
+a{
+    display:inline;
+    margin-left:5%;
+    border:2px solid black;
+    background:purple;
+    color:white;
+    text-decoration: none;
+    padding:.25%;
+    font-weight: bolder;
+}
