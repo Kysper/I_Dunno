@@ -5,8 +5,22 @@ const recipeSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+    category:{
+        type:String,
+    },
+    area:{
+        type:String,
+    },
+    instructions:{
+        type:String,
+        trim:true
+    },
     imageUrl: {
         type: String,
+    },
+
+    videoUrl:{
+        type:String,
     },
     ingredients: {
         type:String   
