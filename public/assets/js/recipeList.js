@@ -1,5 +1,4 @@
 
-<link rel="stylesheet" href="./assets/css/style-card.css"></link>
 document.getElementsByClassName('recipe-list').appendChild(`<ul> ID:${recipe.id}<br><br>
 Title:${recipe.title}<br><br>
  Category:${recipe.category}<br><br>
