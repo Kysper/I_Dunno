@@ -27,6 +27,7 @@ router.get("/search-recipe", async (req, res, next) => {
 });
 
 router.get("/display-recipe", (req,res)=>{
+  console.log(recipeController.getRecipe());
   res.send(recipeController.getRecipe());
 });
 

@@ -31,10 +31,16 @@ exports.getObject = data => {
       element.strYoutube
     );
     recipeArr.push(recipe);
+    console.log(recipeArr)
   })
   this.getRecipe(recipeArr);
 };
 
-exports.getRecipe = recipe => {
-return `<h1>${recipeArr[0].id}</h1>`
+exports.getRecipe= () => {
+  return `
+  <card class='container'>
+  <h1>${recipeArr[0].id}</h1>
+  <img src='${recipeArr[0].imageUrl}'
+  <
+  </card>`
 };
