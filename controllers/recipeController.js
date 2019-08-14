@@ -1,44 +1,41 @@
 const recipeArr = [];
-function RecipeConstructor(
-  id,
-  title,
-  category,
-  area,
-  instructions,
-  imageUrl,
-  videoUrl
-) {
+function Recipe(id, title, instructions, imageUrl, videoUrl) {
   this.id = id;
   this.title = title;
-  this.category = category;
-  this.area = area;
   this.instructions = instructions;
   this.imageUrl = imageUrl;
   this.videoUrl = videoUrl;
 }
 
 exports.createObject = data => {
-  let recipe = new RecipeConstructor(
+  let recipe = new Recipe(
     data.idMeal,
     data.strMeal,
-    data.strCategory,
-    data.strArea,
     data.strInstructions,
     data.strMealThumb,
     data.strYoutube
   );
-  recipeArr.push(recipe);
-  return recipeArr;
+ recipeArr.push(recipe);
+};
+i=0;
+exports.getRecipe = () => {
+
+  let recipe = '';
+  if(i < recipeArr.length){
+  recipeArr.forEach(cur=>{
+ recipe += `<div>
+  <h2>${cur.title}</h2>
+  <img src='${cur.imageUrl}'>
+  <p>${cur.instructions}</p>
+  <a href="${cur.videoUrl}">Watch how to make ${cur.title}</a>
+  </div>`
+})
+i++;
+
+ this.getRecipe(); 
+ return recipe
+}
+return
 };
 
-exports.getRecipe = () => {
- let html;
-  for (let i = 0; i < recipeArr.length; i++) {
-    html += `<h1>${recipeArr[i].title}</h1>
-    <img src='${recipeArr[i].imageUrl}'>
-    <p>${recipeArr[i].instructions}</p>
-    <a href='${recipeArr[i].videoUrl}>Watch how to cook ${recipeArr[i].title}</a>`;
-  
-  }
-  return html
-};
+/* <p>${cur.instructions}</p> */
