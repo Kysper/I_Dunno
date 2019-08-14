@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const User = require("../models/User");
 const auth = require("../middleware/auth");
 const path = require('path')
@@ -28,7 +28,7 @@ res.sendFile(path.join(__dirname, '../../../public', 'sign-up.html'));
 
 
 //USES EMAIL/PASSWORD TO LOGIN TO ACCESS PROFILE
-router.post("/login", auth, async (req, res) => {
+router.post("/login", auth, async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findByCredentials(email, password);
@@ -42,6 +42,9 @@ router.post("/login", auth, async (req, res) => {
     res.send({ user, token });
   } catch (error) {
     res.status(400).send(error);
+  }
+  next(),(req,res)=>{
+    res.redirect('/');
   }
 });
 
