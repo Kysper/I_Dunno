@@ -6,21 +6,22 @@ const path = require('path')
 const router = express.Router();
 
 //POST TO SERVER TO CREATE USER
-router.post("/sign-up", async (req, res) => {
+router.post("/users/sign-up", async (req, res) => {
   // Create a new user
   try {
     const user = new User(req.body);
     await user.save();
     const token = await user.generateAuthToken();
-    console.log(token);
-    res.status(201).send({ user, token });
+    // console.log(token);
+    res.status(201).redirect('/users/login')
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400)
+    console.log(error);
   }
 });
 
 
-router.get("/sign-up", async (req, res) => {
+router.get("/users/sign-up", async (req, res) => {
   //Route to Sign-up Page
 res.sendFile(path.join(__dirname, '../../../public', 'sign-up.html'));
 
@@ -28,7 +29,7 @@ res.sendFile(path.join(__dirname, '../../../public', 'sign-up.html'));
 
 
 //USES EMAIL/PASSWORD TO LOGIN TO ACCESS PROFILE
-router.post("/login", auth, async (req, res, next) => {
+router.post("/users/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findByCredentials(email, password);
@@ -39,24 +40,22 @@ router.post("/login", auth, async (req, res, next) => {
     }
     const token = await user.generateAuthToken();
     console.log('Login successful!')
-    res.send({ user, token });
-  } catch (error) {
-    res.status(400).send(error);
-  }
-  next(),(req,res)=>{
     res.redirect('/');
+  } catch (error) {
+    res.status(400)
+    console.log(error)
   }
 });
 
-router.get('/login', auth, async(req,res)=>{
-    res.sendFile(path.join(__dirname, '../../../public', 'login.html'));
+router.get('/users/login', async(req,res)=>{
+    res.sendFile(path.join(__dirname, '../../../public', 'login.html'))
 })
 
-router.get("/me", auth, async (req, res) => {
+router.get("/users/profile", auth, async (req, res) => {
     res.send(req.user)
 });
 
-router.post("/logout", auth, async (req, res) => {
+router.post("/users/logout", auth, async (req, res) => {
   try {
     req.user.tokens = req.user.tokens.filter(token => {
       return token.token != req.token;

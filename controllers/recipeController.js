@@ -1,4 +1,4 @@
-const recipeArr = [];
+let recipeArr = [];
 function Recipe(id, title, instructions, imageUrl, videoUrl) {
   this.id = id;
   this.title = title;
@@ -15,27 +15,6 @@ exports.createObject = data => {
     data.strMealThumb,
     data.strYoutube
   );
- recipeArr.push(recipe);
+  recipeArr.push(recipe);
+  return recipeArr
 };
-i=0;
-exports.getRecipe = () => {
-
-  let recipe = '';
-  if(i < recipeArr.length){
-  recipeArr.forEach(cur=>{
- recipe += `<div>
-  <h2>${cur.title}</h2>
-  <img src='${cur.imageUrl}'>
-  <p>${cur.instructions}</p>
-  <a href="${cur.videoUrl}">Watch how to make ${cur.title}</a>
-  </div>`
-})
-i++;
-
- this.getRecipe(); 
- return recipe
-}
-return
-};
-
-/* <p>${cur.instructions}</p> */

@@ -9,9 +9,6 @@ require('./db/db')
 const app = express();
 
 app.use(express.static('public'));
-app.use(express.static('css'));
-app.use(express.static('images'));
-app.use(express.static('js'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
