@@ -1,39 +1,64 @@
 /*Home*/
 
-*{
-    margin:0;
-    padding:0;
-}
-.nav-bar {
-    display:inline-block;
-    width:100%;
-border-bottom:3px solid purple;
-height: 80px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#find-recipe{
-    display:inline-block;
-    position:relative;
-    height: 30px;
-    left:50px;
-    top:50px;
-   
+html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
 }
-button{
-    display:inline-block;
-    position:relative;
-    height: 30px;
-    left:50px;
-    top:50px;
-    background:lightblue;
+
+
+/* Navigation bar */
+
+.container {
+    margin: auto;
+    max-width: 1400px;
+    overflow: auto;
 }
-a{
-    display:inline;
-    margin-left:5%;
-    border:2px solid black;
-    background:purple;
-    color:white;
+
+a {
+    color: #fff;
     text-decoration: none;
-    padding:.25%;
-    font-weight: bolder;
 }
+
+h1 {
+    padding: 20px 20px;
+}
+
+#navbar {
+  overflow: auto;
+  background: #b1301f;
+  color: #b1301f;
+}
+
+#navbar h1 {
+    float: left;
+    color: #fff;
+}
+
+#navbar ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar ul a {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+#find-recipe {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  left: 50px;
+  top: 50px;
+}
+
+
