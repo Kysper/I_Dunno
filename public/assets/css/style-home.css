@@ -11,6 +11,22 @@ border-bottom:3px solid purple;
 height: 80px;
 }
 
+#find-recipe{
+    display:inline-block;
+    position:relative;
+    height: 30px;
+    left:50px;
+    top:50px;
+   
+}
+button{
+    display:inline-block;
+    position:relative;
+    height: 30px;
+    left:50px;
+    top:50px;
+    background:lightblue;
+}
 a{
     display:inline;
     margin-left:5%;

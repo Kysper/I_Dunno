@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 const recipeController = require("../../../controllers/recipeController");
-// const Recipe = require('../models/Recipe')
+const Recipe = require("../models/Recipe");
 const auth = require("../middleware/auth");
 router.get("/search-recipe", async (req, res, next) => {
   try {
@@ -16,7 +16,7 @@ router.get("/search-recipe", async (req, res, next) => {
         data.meals.forEach(element => {
           recipe = recipeController.createObject(element);
         });
-        res.send(recipe)
+        res.redirect("/display-recipe");
       })
       .catch(error => {
         console.log(error);
@@ -24,8 +24,15 @@ router.get("/search-recipe", async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  recipe = "";
 });
 
+router.get("/display-recipe", (req, res, next) => {
+ res.send(recipe)
+});
+
+
+// });
 //Authentication Endpoints
 
 router.post("/save-recipe/:id", auth, (req, res) => {});
