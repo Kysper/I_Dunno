@@ -7,12 +7,15 @@ function Recipe(id, title, instructions, imageUrl, videoUrl) {
 }
 
 exports.createObject = data => {
-  let recipe = new Recipe(
-    data.idMeal,
-    data.strMeal,
-    data.strInstructions,
-    data.strMealThumb,
-    data.strYoutube
-  );
- return recipe
+  let recipe;
+   data.meals.forEach(element=>{
+   recipe = new Recipe(
+      element.idMeal,
+      element.strMeal,
+      element.strInstructions,
+      element.strMealThumb,
+      element.strYoutube
+    );
+  });
+  return recipe;
 };

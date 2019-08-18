@@ -4,19 +4,18 @@ const router = express.Router();
 const recipeController = require("../../../controllers/recipeController");
 const Recipe = require("../models/Recipe");
 const auth = require("../middleware/auth");
-router.get("/search-recipe/", async (req, res, next) => {
+router.get("/search-recipe/", async(req, res, next) => {
   let search = req.query.search;
   try {
-   await axios
+    await axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
       .then(response => {
         const data = response.data;
-        res.json(data);
+          console.log(recipeController.createObject(data));
       });
-      res.end();
   } catch (error) {
-    console.log(error)
-  res.end()
+    console.log(error);
+    res.end();
   }
 });
 
@@ -25,6 +24,3 @@ router.get("/search-recipe/", async (req, res, next) => {
 router.post("/save-recipe/:id", auth, (req, res) => {});
 
 module.exports = router;
-// data.meals.forEach(element => {
-//   res.send(recipeController.createObject(element)); 
-//  });

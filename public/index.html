@@ -4,38 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <script  type="text/javascript" src="/assets/js/index.js"></script> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/style-home.css" />
     <title>I Dunno | Recipes for Indecisive People</title>
   </head>
-  
-  <body>
 
+  <body>
     <!-- Navigation Bar -->
     <nav id="navbar">
       <div class="container">
         <h1><i class="fas fa-apple-alt fa-2x"></i></h1>
-      <ul class="links">
-        <a href='/' method='GET'>Home</a>
-        <a href='/sign-up' method='GET' disabled>Sign-Up</a>
-        <a href='/logout' hidden>Logout</a>
-      </ul>
-    </div>
+        <ul class="links">
+          <a href="/" method="GET">Home</a>
+          <a href="/sign-up" method="GET" disabled>Sign-Up</a>
+          <a href="/logout" hidden>Logout</a>
+        </ul>
+      </div>
     </nav>
 
     <!-- Search for Recipe bar -->
-    <form action="/search-recipe" method="GET" id="search-recipe" class="recipe">
-      <input
+    <input
       id="find-recipe"
       class="input"
       type="text"
       name="search"
       placeholder="Find a recipe"
-      />
-      <button class="btn" type="submit">
-        Search
-      </button>
-     
-</body>
+    />
+    <button id="search-recipe" class="btn" type="submit">
+      Search
+    </button>
+  </body>
 </html>
