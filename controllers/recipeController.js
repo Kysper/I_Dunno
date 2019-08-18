@@ -1,4 +1,3 @@
-let recipeArr = [];
 function Recipe(id, title, instructions, imageUrl, videoUrl) {
   this.id = id;
   this.title = title;
@@ -15,6 +14,5 @@ exports.createObject = data => {
     data.strMealThumb,
     data.strYoutube
   );
-  recipeArr.push(recipe);
-  return recipeArr
+ return recipe
 };

@@ -4,37 +4,27 @@ const router = express.Router();
 const recipeController = require("../../../controllers/recipeController");
 const Recipe = require("../models/Recipe");
 const auth = require("../middleware/auth");
-router.get("/search-recipe", async (req, res, next) => {
+router.get("/search-recipe/", async (req, res, next) => {
+  let search = req.query.search;
   try {
-    let query = "";
-    query = req.query.search;
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
-    return await axios
-      .get(url)
-      .then(async response => {
+   await axios
+      .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+      .then(response => {
         const data = response.data;
-        data.meals.forEach(element => {
-          recipe = recipeController.createObject(element);
-        });
-        res.redirect("/display-recipe");
-      })
-      .catch(error => {
-        console.log(error);
+        res.json(data);
       });
+      res.end();
   } catch (error) {
-    console.log(error);
+    console.log(error)
+  res.end()
   }
-  recipe = "";
 });
 
-router.get("/display-recipe", (req, res, next) => {
- res.send(recipe)
-});
-
-
-// });
 //Authentication Endpoints
 
 router.post("/save-recipe/:id", auth, (req, res) => {});
 
 module.exports = router;
+// data.meals.forEach(element => {
+//   res.send(recipeController.createObject(element)); 
+//  });
