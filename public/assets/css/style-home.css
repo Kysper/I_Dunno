@@ -28,6 +28,7 @@ body {
   background: #b1301f;
   color: #b1301f;
   border-bottom: #fff solid 2px;
+  z-index:1;
 }
 
 #navbar h1 {
@@ -59,9 +60,39 @@ body {
 #find-recipe {
   display: inline-block;
   position: relative;
-  height: 30px;
-  left: 50px;
-  top: 50px;
+  width:20%;
+  height: 40px;
+  left: 35%;
+  top: 40%;
+  background-color: transparent;
+  z-index:0;
+}
+#find-recipe:hover {
+  display: inline-block;
+  position: relative;
+  width:20%;
+  height: 40px;
+  left: 35%;
+  top: 40%;
+  background-color:white;
+}
+
+#search-recipe {
+  position:relative;
+  top:40%;
+  left:35%;
+  width:70px;
+  height: 40px;
+  background:#b1301f;
+}
+#search-recipe:hover {
+  position:relative;
+  top:40%;
+  left:35%;
+  width:70px;
+  height: 40px;
+  background: #ce3c29;
+  cursor: pointer;
 }
 
 /* Search Decoration */

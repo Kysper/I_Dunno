@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 function Recipe(id, title, instructions, imageUrl, videoUrl) {
   this.id = id;
   this.title = title;
@@ -6,16 +8,28 @@ function Recipe(id, title, instructions, imageUrl, videoUrl) {
   this.videoUrl = videoUrl;
 }
 
-exports.createObject = data => {
+function createObject(data) {
+  const recipeArr = [];
   let recipe;
-   data.meals.forEach(element=>{
-   recipe = new Recipe(
-      element.idMeal,
-      element.strMeal,
-      element.strInstructions,
-      element.strMealThumb,
-      element.strYoutube
+  for (i = 0; i < data.meals.length; i++) {
+    recipe = new Recipe(
+      data.meals[i].idMeal,
+      data.meals[i].strMeal,
+      data.meals[i].strInstructions,
+      data.meals[i].strMealThumb,
+      data.meals[i].strYoutube
     );
-  });
-  return recipe;
+    recipeArr.push(recipe);
+  }
+  return recipeArr;
+}
+
+exports.getAPI = async search => {
+  await axios
+    .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+    .then(response => {
+      const data = response.data;
+      recipeArr = createObject(data);
+    });
+    return recipeArr;
 };

@@ -27,21 +27,22 @@
       </div>
     </nav>
 
-  
-    
     <!-- Search bar image -->
-    <div id="search-img"></div>
-
-      <!-- Search for Recipe bar -->
+    <div id="search-img">
       <input
       id="find-recipe"
-      class="input"
       type="text"
-      name="search"
+      query="search"
       placeholder="Find a recipe"
     />
-    <button id="search-recipe" class="btn" type="submit">
+    <button type="submit" id="search-recipe" onclick="callAPI()" class="btn">
       Search
     </button>
+    </div>
+
+
+    <div id="recipe-list">
+      <!-- Recipe's Here-->
+    </div>
   </body>
 </html>
