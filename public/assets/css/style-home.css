@@ -57,13 +57,14 @@ body {
 
 /* Search Bar */
 
+  /* Search bar itself */
 #find-recipe {
   display: inline-block;
   position: relative;
   width:20%;
   height: 40px;
   left: 35%;
-  top: 40%;
+  top: 45%;
   background-color: transparent;
   z-index:0;
 }
@@ -73,21 +74,22 @@ body {
   width:20%;
   height: 40px;
   left: 35%;
-  top: 40%;
+  top: 45%;
   background-color:white;
 }
-
+  /* Search Bar Button */
 #search-recipe {
   position:relative;
-  top:40%;
+  top:45%;
   left:35%;
   width:70px;
   height: 40px;
   background:#b1301f;
+  color: #fff;
 }
 #search-recipe:hover {
   position:relative;
-  top:40%;
+  top:45%;
   left:35%;
   width:70px;
   height: 40px;
