@@ -1,0 +1,63 @@
+/*Home*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+}
+
+/* Navigation bar */
+
+.container {
+  margin: auto;
+  max-width: 1400px;
+  overflow: auto;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: auto;
+  background: #b1301f;
+  color: #b1301f;
+  border-bottom: #fff solid 2px;
+  z-index:1;
+}
+
+#navbar h1 {
+  padding: 10px 10px;
+  float: left;
+  color: #fff;
+}
+
+#navbar ul {
+  float: right;
+  list-style: none;
+  padding-right: 50px;
+}
+
+#navbar ul a {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+#navbar ul a:hover {
+  background: #ce3c29;
+}
+
+#recipe-img {
+  background: url("../img/bunch-food-fresh-349609.jpg") no-repeat center
+    center/cover;
+  position:stactic;
+  height: 880px;
+}
