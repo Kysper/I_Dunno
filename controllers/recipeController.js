@@ -31,5 +31,5 @@ exports.getAPI = async search => {
       const data = response.data;
       recipeArr = createObject(data);
     });
-    return recipeArr;
+  return recipeArr;
 };

@@ -28,7 +28,7 @@ body {
   background: #b1301f;
   color: #b1301f;
   border-bottom: #fff solid 2px;
-  z-index:1;
+  z-index: 1;
 }
 
 #navbar h1 {
@@ -58,6 +58,33 @@ body {
 #recipe-img {
   background: url("../img/bunch-food-fresh-349609.jpg") no-repeat center
     center/cover;
-  position:stactic;
+  position: static;
   height: 880px;
+}
+
+#recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 80%;
+  padding-top:6%;
+}
+
+.recipe-container {
+  width: 260px;
+  border: 3px solid rgba(255, 0, 0, 0.171);
+  border-radius:5%;
+  text-align: center;
+  font-size: 16px;
+  margin:2%;
+  background:whitesmoke;
+}
+.recipe-title {
+
+}
+.recipe-image {
+  width: 150px;
+  height: 30%;
 }
