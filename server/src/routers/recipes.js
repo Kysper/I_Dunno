@@ -16,9 +16,13 @@ router.get(`/search-recipe/:search`, async (req, res, next) => {
 
 //Authentication Endpoints
 
-router.post("/save-recipe/:id", auth, (req, res) => {
-  const id = req.params.id
-  console.log(id);
+router.post("/save-recipe", (req, res) => {
+const card = req.body;
+console.log(card)
+});
+
+router.post("/recipe.html", (req, res) => {
+  
 });
 
 module.exports = router;
