@@ -87,7 +87,11 @@ body {
   font-size: 20px;
 }
 .recipe-image {
-  width: 50%;
+  width: 60%;
   height: 30%;
+}
+
+.fas fa-star{
+color:gold;
 }
 

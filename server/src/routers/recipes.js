@@ -5,6 +5,7 @@ const recipeController = require("../../../controllers/recipeController");
 const Recipe = require("../models/Recipe");
 const auth = require("../middleware/auth");
 const path = require("path");
+const dotenv = require("dotenv").config();
 
 let recipeArr = [];
 
@@ -17,12 +18,10 @@ router.get(`/search-recipe/:search`, async (req, res, next) => {
 //Authentication Endpoints
 
 router.post("/save-recipe", (req, res) => {
-const card = req.body;
-console.log(card)
+  const card = req.body;
+  Recipe.collection.insertOne({card})
 });
 
-router.post("/recipe.html", (req, res) => {
-  
-});
+router.post("/recipe.html", (req, res) => {});
 
 module.exports = router;
